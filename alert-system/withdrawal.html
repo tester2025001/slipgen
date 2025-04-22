@@ -1,0 +1,340 @@
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binance Email Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            padding: 10px;
+            line-height: 1.4;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        
+        /* Header Section */
+        .email-header {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        img {
+            display: block;
+            margin: auto;
+            width: 100%;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* Sender Info */
+        .sender-info {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .sender-avatar {
+            width: 36px; 
+            height: 36px;
+            background-color: #f0b90b;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .sender-name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .sender-time {
+            color: #6c757d;
+            font-size: 13px;
+        }
+        
+        .email-actions {
+            margin-left: auto;
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Email Body */
+        .email-body {
+            padding: 15px;
+        }
+        
+        .deposit-confirmed {
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        
+        .email-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .faq-link {
+            color: #f0b90b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Divider Line */
+        .divider {
+            border-top: 1px solid #e9ecef;
+            margin: 15px 0;
+        }
+        
+        /* Dashboard Button */
+        .dashboard-button {
+            display: inline-block;
+            background-color: #f0b90b;
+            color: #1e2026;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 12px 0;
+        }
+        
+        /* Warning Text */
+        .warning-text {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .support-link {
+            color: #f0b90b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Automated Message */
+        .automated-message {
+            font-size: 12px;
+            color: #6c757d;
+            font-style: italic;
+            margin: 12px 0;
+        }
+        
+        /* Stay Connected */
+        .stay-connected {
+            margin: 20px 0 15px 0;
+        }
+        
+        .stay-connected-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .phishing-link {
+            color: #f0b90b;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        /* Risk Warning */
+        .risk-warning {
+            font-size: 12px;
+            color: #6c757d;
+            line-height: 1.5;
+            margin-top: 15px;
+        }
+        
+        /* Form Styles */
+        .form-container {
+            max-width: 600px;
+            margin: 15px auto;
+            background: white;
+            padding: 15px;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        
+        .form-control {
+            font-size: 14px;
+            padding: 6px 10px;
+            height: 36px;
+        }
+        
+        .btn-generate {
+            background-color: #f0b90b;
+            color: #1e2026;
+            font-weight: 600;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .compact-form-row {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Email Preview -->
+    <div class="email-container">
+        <div class="email-header">
+            [Binance] USDT Deposit Confirmed - 2024-01-16 9:15:03(UTC)
+        </div>
+        
+        <div class="sender-info">
+            <div class="sender-avatar">B</div>
+            <div>
+                <div class="sender-name">Binance</div>
+                <div class="sender-time">9:15 AM</div>
+            </div>
+            <div class="email-actions">
+                <i class="fas fa-reply" style="color: #6c757d;"></i>
+                <i class="fas fa-ellipsis-v" style="color: #6c757d;"></i>
+            </div>
+        </div>
+        <div class="img1">
+            <img src="log.jpg" alt="">
+        </div>
+        <div class="email-body">
+            <div class="deposit-confirmed">USDT Deposit Successful</div>
+            <p class="email-text">
+                Your deposit of 500 USDT is now available in your Binance account. Log in to check your balance. 
+                <a href="#" class="faq-link">Read our FAQs</a> if you are running into problems.
+            </p>
+            
+            <div class="divider"></div>
+            
+            <a href="#" class="dashboard-button">Visit Your Dashboard</a>
+            
+            <p class="warning-text">
+                Don't recognize this activity? Please <a href="#" class="support-link">reset your password</a> 
+                and <a href="#" class="support-link">contact customer support</a> immediately.
+            </p>
+            
+            <p class="automated-message">
+                This is an automated message, please do not reply.
+            </p>
+            
+            <div class="divider"></div>
+            
+            <div class="stay-connected">
+                <div class="stay-connected-title">Stay connected!</div>
+                <p class="email-text">
+                    To stay secure, <a href="#" class="phishing-link">setup your phishing code here</a>
+                </p>
+            </div>
+            
+            <p class="risk-warning">
+                <strong>Risk warning:</strong> Cryptocurrency trading is subject to high market risk. 
+                Binance will make the best efforts to choose high-quality coins, but will not be 
+                responsible for your trading losses. Please trade with caution. <strong><br>Kindly note:</strong> 
+                Please be aware of phishing sites and always make sure you are visiting the official 
+                Binance.com website when entering sensitive data.
+            </p>
+        </div>
+    </div>
+
+    <!-- Generator Form -->
+    <div class="form-container">
+        <h6 style="font-weight: 600; margin-bottom: 15px; text-align: center;">
+            Binance Email Generator
+        </h6>
+        
+        <div class="row compact-form-row">
+            <div class="col-md-6">
+                <label class="form-label">Currency</label>
+                <select class="form-control" id="cryptoType">
+                    <option value="USDT" selected>USDT</option>
+                    <option value="BTC">BTC</option>
+                    <option value="ETH">ETH</option>
+                    <option value="BNB">BNB</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Amount</label>
+                <input type="number" class="form-control" id="amount" value="500">
+            </div>
+        </div>
+        
+        <div class="row compact-form-row">
+            <div class="col-md-6">
+                <label class="form-label">Date</label>
+                <input type="date" class="form-control" id="transactionDate" value="2024-01-16">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Time</label>
+                <input type="time" class="form-control" id="transactionTime" value="09:15">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Zone</label>
+                <select class="form-control" id="timeZone">
+                    <option value="(UTC)" selected>UTC</option>
+                    <option value="(UTC+1)">UTC+1</option>
+                    <option value="(UTC-5)">UTC-5</option>
+                </select>
+            </div>
+        </div>
+        
+        <button class="btn-generate" onclick="generateEmail()">
+            Generate Email
+        </button>
+    </div>
+
+    <script>
+        function generateEmail() {
+            // Get form values
+            const crypto = document.getElementById('cryptoType').value;
+            const amount = document.getElementById('amount').value;
+            const date = document.getElementById('transactionDate').value;
+            const time = document.getElementById('transactionTime').value;
+            const timeZone = document.getElementById('timeZone').value;
+            
+            // Format time (9:15 AM)
+            const [hours, minutes] = time.split(':');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            const displayHours = hours % 12 || 12;
+            const displayTime = `${displayHours}:${minutes} ${ampm}`;
+            
+            // Update email preview
+            document.querySelector('.email-header').textContent = 
+                `[Binance] ${crypto} Deposit Confirmed - ${date} ${time}${timeZone}`;
+            
+            document.querySelector('.deposit-confirmed').textContent = 
+                `${crypto} Deposit Successful`;
+                
+            document.querySelector('.email-text').innerHTML = 
+                `Your deposit of ${amount} ${crypto} is now available in your Binance account. ` +
+                `Log in to check your balance. <a href="#" class="faq-link">Read our FAQs</a> ` +
+                `if you are running into problems.`;
+                
+            document.querySelector('.sender-time').textContent = displayTime;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

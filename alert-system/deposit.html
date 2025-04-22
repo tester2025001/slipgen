@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Withdrawal Receipt</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+            color: #333;
+        }
+        .receipt {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: white;
+        }
+        .receipt-header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        .amount {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .status-completed {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #28a745;
+            font-weight: 500;
+            justify-content: center;
+        }
+        .status-completed i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .receipt-description {
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .warning-heading {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 25px 0 10px 0;
+            text-align: center;
+            color: #d7cc70;
+        }
+        .divider {
+            border-top: 1px solid #eee;
+            margin: 20px 0;
+        }
+        .detail-section {
+            margin-bottom: 25px;
+        }
+        .detail-row {
+            margin-bottom: 12px;
+            display: flex;
+        }
+        .detail-label {
+            font-weight: 500;
+            color: #666;
+            width: 150px;
+            flex-shrink: 0;
+        }
+        .detail-value {
+            flex: 1;
+            word-break: break-all;
+            font-weight: 400;
+        }
+        .copy-icon {
+            color: #0d6efd;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 14px;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="receipt">
+        <div class="receipt-header">
+            <h1>Withdrawal Details</h1>
+            <div class="amount" id="amount-display">-56 USDT</div>
+            <div class="status-completed">
+                <i class="fas fa-check-circle"></i>
+                <span>Completed</span>
+            </div>
+            <p class="receipt-description">Crypto transferred out of Binance. Please contact the recipient platform for your transaction receipt.</p>
+        </div>
+
+        <div class="warning-heading">Why hasn't my withdrawal arrived?</div>
+
+        <div class="divider"></div>
+
+        <div class="detail-section">
+            <div class="detail-row">
+                <div class="detail-label">Network</div>
+                <div class="detail-value" id="network-display">TRX</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Address</div>
+                <div class="detail-value">
+                    <span class="underline" id="address-display">TRMbhDHkRxVXH4tsMLjttEXGBowUDriM2P</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('address-display')"></i>
+                </div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Txid</div>
+                <div class="detail-value">
+                    <span id="txid-display">6568a288cdf7a2fde36245a27b1759fbd99e75af275a7108a5578282cd5f5ac3</span>
+                    <i class="fas fa-copy copy-icon" onclick="copyToClipboard('txid-display')"></i>
+                </div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Withdrawal Amount</div>
+                <div class="detail-value" id="withdrawal-amount-display">57 USDT</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Network fee</div>
+                <div class="detail-value" id="network-fee-display">1 USDT</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Withdrawal Wallet</div>
+                <div class="detail-value">Spot Wallet</div>
+            </div>
+            
+            <div class="detail-row">
+                <div class="detail-label">Date</div>
+                <div class="detail-value" id="date-display">2024-08-22 22:29:32</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h3>Generate New Receipt</h3>
+        <form id="receipt-form">
+            <div class="mb-3">
+                <label for="network" class="form-label">Network</label>
+                <input type="text" class="form-control" id="network" value="TRX">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" value="TRMbhDHkRxVXH4tsMLjttEXGBowUDriM2P">
+            </div>
+            <div class="mb-3">
+                <label for="txid" class="form-label">Txid</label>
+                <input type="text" class="form-control" id="txid" value="6568a288cdf7a2fde36245a27b1759fbd99e75af275a7108a5578282cd5f5ac3">
+            </div>
+            <div class="mb-3">
+                <label for="withdrawal-amount" class="form-label">Withdrawal Amount</label>
+                <input type="text" class="form-control" id="withdrawal-amount" value="57">
+            </div>
+            <div class="mb-3">
+                <label for="network-fee" class="form-label">Network Fee</label>
+                <input type="text" class="form-control" id="network-fee" value="1">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="text" class="form-control" id="date" value="2024-08-22 22:29:32">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="generateReceipt()">Generate Receipt</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalIcon = element.nextElementSibling.className;
+                element.nextElementSibling.className = "fas fa-check copy-icon";
+                setTimeout(() => {
+                    element.nextElementSibling.className = originalIcon;
+                }, 2000);
+            });
+        }
+
+        function generateReceipt() {
+            // Get values from form
+            const network = document.getElementById('network').value;
+            const address = document.getElementById('address').value;
+            const txid = document.getElementById('txid').value;
+            const withdrawalAmount = document.getElementById('withdrawal-amount').value;
+            const networkFee = document.getElementById('network-fee').value;
+            const date = document.getElementById('date').value;
+            
+            // Calculate total amount (withdrawal + fee)
+            const totalAmount = parseFloat(withdrawalAmount) + parseFloat(networkFee);
+            
+            // Update receipt display
+            document.getElementById('amount-display').innerText = `-${totalAmount} USDT`;
+            document.getElementById('network-display').innerText = network;
+            document.getElementById('address-display').innerText = address;
+            document.getElementById('txid-display').innerText = txid;
+            document.getElementById('withdrawal-amount-display').innerText = `${withdrawalAmount} USDT`;
+            document.getElementById('network-fee-display').innerText = `${networkFee} USDT`;
+            document.getElementById('date-display').innerText = date;
+        }
+
+        // Initialize with default values
+        document.addEventListener('DOMContentLoaded', function() {
+            generateReceipt();
+        });
+    </script>
+</body>
+</html>

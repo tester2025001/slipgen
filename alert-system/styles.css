@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.binance-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.binance-logo img {
+    height: 40px;
+}
+
+.login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Receipt styling */
+.receipt-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.deposit-receipt {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.deposit-receipt h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.deposit-receipt h2 {
+    font-size: 18px;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.deposit-receipt .status {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.deposit-receipt .divider {
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+.deposit-receipt .detail-row {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.deposit-receipt .detail-label {
+    font-weight: bold;
+    width: 150px;
+}
+
+.deposit-receipt .detail-value {
+    flex: 1;
+}
+
+.deposit-receipt .address {
+    font-family: monospace;
+    word-break: break-all;
+}
+
+/* Email receipt styling */
+.email-receipt {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.email-header {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.email-body {
+    padding: 20px;
+}
+
+.email-footer {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
+    color: #666;
+}
+
+.email-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.email-message {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-email {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0b90b;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.risk-warning {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Print styles */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #previewContent, #previewContent * {
+        visibility: visible;
+    }
+    #previewContent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+    .no-print {
+        display: none !important;
+    }
+}
